@@ -8,7 +8,6 @@ A clean, typography-focused editorial layout designed to showcase graphic and mo
 ```
 
 ├─ index.html
-├─ portfolio website inspo.webp
 ├─ README.md
 ├─ resource
 │  ├─ 3 by 3 pixel photo.jpeg
