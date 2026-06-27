@@ -8,17 +8,42 @@
 </head>
 <body>
     
-    <div id="nav">
-
-        <button id="menu-toggle" style="display: none;">☰ Menu</button>
-
+    <nav id="nav">
+        <div id="logo">
+            <img src="Muhammad Soheb logo.svg" alt="Muhammad Soheb logo" width="50px">
+        </div>
+        <button id="menu-toggle">☰ Menu</button>
         <ul id="nav-list-all">
-            <ul class="nav-item">Home</ul>
-            <ul class="nav-item">Work</ul>
-            <ul class="nav-item">Contact</ul>
+            <li class="nav-item"><a href="#">Home</a></li>
+            <li class="nav-item"><a href="#">Work</a></li>
+            <li class="nav-item"><a href="#">Contact</a></li>
         </ul>
-    </div>
+    </nav>
 
+    <main class="hero-grid">
+        
+        <div id="left-section">
+            <div id="left-section-text">
+                <h1 id="dynamic-title">lab.</h1>
+            </div>
+            <div id="left-section-bottom-text">
+                <span id="dynamic-number" class="vertical-text">001</span>
+            </div>
+        </div>
+
+        <div id="right-section">
+            <div class="portfolio-item" data-num="001">
+                <img src="mountain dreamy paster color.webp" alt="Mountain Dreamy.">
+            </div>
+            <div class="portfolio-item" data-num="002">
+                <img src="3 by 3 pixel photo.jpeg" alt="3 by 3 art.">
+            </div>
+            <div class="portfolio-item" data-num="003">
+                <img src="end of summer poster.webp" alt="End of Summer.">
+            </div>
+        </div>
+
+    </main>
 
     <script src="script.js"></script>
 </body>
