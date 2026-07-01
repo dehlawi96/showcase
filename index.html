@@ -4,47 +4,129 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="src/style.css">
-    <title>Portfolio</title>
+    <title>Muhammad Soheb — Portfolio</title>
 </head>
 <body>
-    
+
     <nav id="nav">
-        <div id="logo">
-            <img src="resource/Muhammad Soheb logo.svg" alt="Muhammad Soheb logo" width="50px">
+        <div id="logo-area">
+            <img src="resource/Muhammad Soheb logo.svg" alt="Muhammad Soheb Logo" class="brand-logo-img">
         </div>
-        <button id="menu-toggle">☰ Menu</button>
-        <ul id="nav-list-all">
-            <li class="nav-item"><a href="#">Home</a></li>
-            <li class="nav-item"><a href="#">Work</a></li>
-            <li class="nav-item"><a href="#">Contact</a></li>
+        <ul id="nav-links">
+            <li><a href="#" class="active">Home</a></li>
+            <li><a href="work.html">Work</a></li>
+            <li><a href="#footer">Contact</a></li>
         </ul>
+        <div id="nav-status">
+            <span>Available for 2026</span>
+        </div>
     </nav>
 
-    <main class="hero-grid">
-        
-        <div id="left-section">
-            <div id="left-section-text">
-                <h1 id="dynamic-title">lab.</h1>
+    <main>
+        <section class="hero-editorial">
+            <div class="hero-left">
+                <div class="header-post-tag">Based in Delhi, India</div>
+                <h1 class="hero-headline">Muhammad<br><em>Soheb</em></h1>
+                <p class="hero-description">
+                    Graphic Designer &amp; Motion Artist. Bridging purposeful graphic design with fluid motion to create visual stories that breathe, grow, and connect.
+                </p>
+                <a href="#selected-works" class="hero-cta-link"><span class="icon-plus">+</span> View Selected Works</a>
             </div>
-            <div id="left-section-bottom-text">
-                <span id="dynamic-number" class="vertical-text">001</span>
+            <div class="hero-right">
+                <div class="featured-media-container">
+                    <video autoplay loop muted playsinline poster="resource/mountain dreamy paster color.webp">
+                        <source src="resource/hero-presentation.mp4" type="video/mp4">
+                    </video>
+                </div>
             </div>
-        </div>
+        </section>
 
-        <div id="right-section">
-            <div class="portfolio-item" data-num="001">
-                <img src="resource/mountain dreamy paster color.webp" alt="Mountain Dreamy.">
+        <section id="selected-works" class="editorial-section">
+            <div class="section-header-grid">
+                <h2 class="section-title">Capabilities</h2>
+                <div class="section-intro-text">
+                    <p>Fusing deliberate visual layouts with purposeful kinetics. Exploring the relationship between static structural design systems and tactile motion dynamics to build functional digital expressions.</p>
+                </div>
             </div>
-            <div class="portfolio-item" data-num="002">
-                <img src="resource/3 by 3 pixel photo.jpeg" alt="3 by 3 art.">
-            </div>
-            <div class="portfolio-item" data-num="003">
-                <img src="resource/end of summer poster.webp" alt="End of Summer.">
-            </div>
-        </div>
 
+            <div class="works-staggered-grid">
+                <div class="work-card">
+                    <div class="card-image-box">
+                        <img src="resource/mountain dreamy paster color.webp" alt="Mountain Dreamy Poster">
+                    </div>
+                    <div class="card-meta">
+                        <span class="card-num">001</span>
+                        <h3 class="card-title">Mountain Dreamy</h3>
+                    </div>
+                </div>
+
+                <div class="work-card">
+                    <div class="card-image-box">
+                        <img src="resource/3 by 3 pixel photo.jpeg" alt="3 by 3 Pixel Art">
+                    </div>
+                    <div class="card-meta">
+                        <span class="card-num">002</span>
+                        <h3 class="card-title">3 by 3 Art</h3>
+                    </div>
+                </div>
+
+                <div class="work-card full-width-card">
+                    <div class="card-image-box">
+                        <img src="resource/end of summer poster.webp" alt="End of Summer Poster">
+                    </div>
+                    <div class="card-meta">
+                        <span class="card-num">003</span>
+                        <h3 class="card-title">End of Summer</h3>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="editorial-section border-top">
+            <div class="section-header-grid">
+                <h2 class="section-title">The Approach</h2>
+                <div class="section-intro-text text-large">
+                    <p>Design is an act of translation. It is about turning complex structural logic into highly intuitive, raw visual languages. No fluff, just impact.</p>
+                </div>
+            </div>
+        </section>
     </main>
 
-    <script src="src/script.js"></script>
+    <footer id="footer">
+        <div class="footer-top-grid">
+            <div class="footer-col brand-col">
+                <h3>Start a Conversation</h3>
+                <a href="mailto:info@mysite.com" class="footer-email-link"><span class="icon-plus">+</span> Email Me</a>
+            </div>
+            
+            <div class="footer-col links-col">
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="work.html">Work</a></li>
+                    <li><a href="#footer">Contact</a></li>
+                </ul>
+            </div>
+
+            <div class="footer-col contact-col">
+                <p class="contact-detail">info@mysite.com</p>
+                <p class="contact-detail">Delhi, India</p>
+            </div>
+
+            <div class="footer-col legal-col">
+                <a href="#">Privacy Policy</a>
+                <a href="#">Accessibility Statement</a>
+                <div class="footer-socials">
+                    <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://bsky.app" target="_blank" rel="noopener">Bluesky</a>
+                    <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer-bottom-bar">
+            <p>&copy; 2026 by Muhammad Soheb. Engineered with clarity.</p>
+        </div>
+    </footer>
+
 </body>
 </html>

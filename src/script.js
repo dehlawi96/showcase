@@ -1,28 +1,39 @@
 document.addEventListener("DOMContentLoaded", () => {
-    const titleElement = document.getElementById("dynamic-title");
-    const numberElement = document.getElementById("dynamic-number");
-    const portfolioItems = document.querySelectorAll(".portfolio-item");
+    const menuToggle = document.getElementById("menu-toggle");
+    const navListAll = document.getElementById("nav-list-all");
+    
+    const sliderTrack = document.getElementById("slider-track");
+    const prevBtn = document.getElementById("slide-prev");
+    const nextBtn = document.getElementById("slide-next");
 
-    const observerOptions = {
-        root: null,
-        rootMargin: "-20% 0px -20% 0px",
-        threshold: 0.4
-    };
-
-    const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                const targetItem = entry.target;
-                const innerImg = targetItem.querySelector("img, video");
-                
-                if (innerImg) {
-                    titleElement.textContent = innerImg.getAttribute("alt");
-                }
-                
-                numberElement.textContent = targetItem.getAttribute("data-num");
-            }
+    if (menuToggle && navListAll) {
+        menuToggle.addEventListener("click", () => {
+            const isExpanded = menuToggle.getAttribute("aria-expanded") === "true";
+            menuToggle.setAttribute("aria-expanded", !isExpanded);
+            navListAll.classList.toggle("active");
         });
-    }, observerOptions);
+    }
 
-    portfolioItems.forEach(item => observer.observe(item));
+    if (sliderTrack && prevBtn && nextBtn) {
+        const getScrollStep = () => {
+            return window.innerWidth >= 768 ? sliderTrack.offsetWidth : sliderTrack.querySelector(".portfolio-item").offsetWidth + 20;
+        };
+
+        nextBtn.addEventListener("click", () => {
+            sliderTrack.scrollBy({ left: getScrollStep(), behavior: "smooth" });
+        });
+
+        prevBtn.addEventListener("click", () => {
+            sliderTrack.scrollBy({ left: -getScrollStep(), behavior: "smooth" });
+        });
+    }
+
+    window.addEventListener("resize", () => {
+        if (window.innerWidth >= 768) {
+            if (navListAll && navListAll.classList.contains("active")) {
+                navListAll.classList.remove("active");
+                menuToggle.setAttribute("aria-expanded", "false");
+            }
+        }
+    });
 });
