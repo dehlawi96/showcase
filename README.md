@@ -6,14 +6,21 @@ A clean, typography-focused editorial layout designed to showcase graphic and mo
 ## Directory Structure
 
 ```
-
+Portfolio
+├─ accessibility.html
 ├─ index.html
+├─ portfolio website inspo.webp
+├─ privacy.html
 ├─ README.md
 ├─ resource
-│  ├─ 3 by 3 pixel photo.jpeg
-│  ├─ end of summer poster.webp
-│  ├─ mountain dreamy paster color.webp
-│  └─ Muhammad Soheb logo.svg
+│  ├─ Muhammad Soheb logo.svg
+│  └─ Poster
+│     ├─ Ancient-drawing-poster.webp
+│     ├─ Ethereal-poster.webp
+│     ├─ Kobe-Mosque-Japan.webp
+│     ├─ look-up-at-sky.webp
+│     ├─ roman-brutalism.webp
+│     └─ sekiro-brutalism.webp
 └─ src
    ├─ script.js
    └─ style.css
