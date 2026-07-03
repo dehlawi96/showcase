@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="src/style.css">
+    <title>Accessibility Statement — Muhammad Soheb</title>
+</head>
+<body>
+
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <img src="resource/Muhammad Soheb logo.svg" alt="Muhammad Soheb Logo" class="navbar__logo-img" width="50" height="50">
+        </div>
+
+        <button class="navbar__toggle" id="menu-toggle" aria-expanded="false" aria-label="Toggle navigation menu">
+            <span class="navbar__toggle-icon"></span>
+        </button>
+
+        <ul class="navbar__links" id="nav-list-all">
+            <li><a href="index.html" class="navbar__link">Home</a></li>
+            <li><a href="work.html" class="navbar__link">Work</a></li>
+            <li><a href="index.html#contact" class="navbar__link">Contact</a></li>
+        </ul>
+        <div class="navbar__status">
+            <span>Available for 2026</span>
+        </div>
+    </nav>
+
+    <main>
+        <section class="legal-page">
+            <div class="legal-page__header">
+                <span class="intro__location">Legal</span>
+                <h1 class="legal-page__title">Accessibility Statement</h1>
+                <p class="legal-page__updated">Last updated: <time datetime="2026-07-04">July 4, 2026</time></p>
+            </div>
+
+            <div class="legal-page__content">
+
+                <article class="legal-page__section">
+                    <h2>Commitment</h2>
+                    <p>As a designer, I care about this site being usable by as many people as possible, regardless of ability or the device they browse with. I'm actively working toward meeting WCAG 2.1 Level AA guidelines, and accessibility is treated as part of the design process here, not an afterthought bolted on at the end.</p>
+                </article>
+
+                <article class="legal-page__section">
+                    <h2>What's already in place</h2>
+                    <ul>
+                        <li><strong>Descriptive alt text</strong> on every image, so screen reader users get the same context a sighted visitor gets from looking at the work.</li>
+                        <li><strong>Keyboard-operable navigation</strong> — the mobile menu can be opened, used, and closed without a mouse, with its open/closed state announced via <code>aria-expanded</code>.</li>
+                        <li><strong>Semantic HTML structure</strong> — proper landmarks (<code>nav</code>, <code>main</code>, <code>footer</code>) and heading order, so the page makes sense when read by assistive technology rather than just when looked at.</li>
+                        <li><strong>Reserved image dimensions</strong> so pages don't jump around as content loads — useful for anyone with motion sensitivity or a slower connection.</li>
+                        <li><strong>Decorative motion is muted and looped quietly</strong> in the background rather than autoplaying with sound or demanding attention.</li>
+                    </ul>
+                </article>
+
+                <article class="legal-page__section">
+                    <h2>What I'm actively improving</h2>
+                    <p>In the interest of being upfront rather than overstating things: a few refinements are in progress, including a "skip to content" link for keyboard users, honoring reduced-motion preferences for anyone sensitive to animation, and more visible focus outlines for keyboard navigation. This section will be updated as each lands.</p>
+                </article>
+
+                <article class="legal-page__section">
+                    <h2>Compatibility</h2>
+                    <p>This site is built with standard, semantic HTML and CSS and is tested to work with recent versions of major browsers (Chrome, Firefox, Safari, Edge) as well as common screen readers.</p>
+                </article>
+
+                <article class="legal-page__section">
+                    <h2>Feedback</h2>
+                    <p>If you run into an accessibility barrier anywhere on this site, I want to know about it. Reach out at <a href="mailto:muhammadsoheb91@gmail.com" class="legal-page__link">muhammadsoheb91@gmail.com</a> and I'll aim to address it directly.</p>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact" class="footer">
+        <div class="footer__main">
+            <div class="footer__block footer__block--cta">
+                <h3>Start a Conversation</h3>
+                <a href="mailto:muhammadsoheb91@gmail.com" class="footer__email"><span class="footer__email-icon">+</span> Email Me</a>
+            </div>
+
+            <div class="footer__block footer__block--nav">
+                <ul class="footer__links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="work.html">Work</a></li>
+                </ul>
+            </div>
+
+            <div class="footer__block footer__block--info">
+                <p class="footer__detail">Delhi, India</p>
+            </div>
+
+            <div class="footer__block footer__block--legal">
+                <a href="privacy.html" class="footer__legal-link">Privacy Policy</a>
+                <a href="accessibility.html" class="footer__legal-link">Accessibility Statement</a>
+                <div class="footer__socials">
+                    <a href="https://instagram.com/9.ion1" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://bsky.app/profile/9ion1.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+                    <a href="https://github.com/dehlawi96" target="_blank" rel="noopener">GitHub</a>
+                </div>
+            </div>
+        </div>
+
+        <div class="footer__bottom">
+            <p>&copy; 2026 by Muhammad Soheb. Engineered with clarity.</p>
+        </div>
+    </footer>
+
+    <script src="src/script.js"></script>
+</body>
+</html>

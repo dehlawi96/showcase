@@ -7,6 +7,7 @@
     --border-light: rgba(0, 0, 0, 0.08);
     --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Arial, sans-serif;
     --font-serif: Georgia, serif;
+    --transition-smooth: cubic-bezier(0.25, 1, 0.5, 1);
 }
 
 * {
@@ -57,6 +58,7 @@ body {
     background: var(--bg-color);
     padding: 20px;
     border-bottom: 1px solid var(--border-light);
+    will-change: transform, opacity;
 }
 
 .navbar__links.active {
@@ -70,6 +72,11 @@ body {
     font-size: 0.9rem;
     text-transform: uppercase;
     letter-spacing: 1px;
+    transition: opacity 0.2s ease;
+}
+
+.navbar__link:hover {
+    opacity: 0.7;
 }
 
 .navbar__link--active {
@@ -98,6 +105,7 @@ body {
     height: 2px;
     background: var(--text-color);
     position: relative;
+    transition: background 0.2s ease;
 }
 
 .navbar__toggle-icon::before,
@@ -108,9 +116,20 @@ body {
     height: 2px;
     background: var(--text-color);
     left: 0;
+    transition: transform 0.2s ease;
 }
 .navbar__toggle-icon::before { top: -8px; }
 .navbar__toggle-icon::after { bottom: -8px; }
+
+[aria-expanded="true"] .navbar__toggle-icon {
+    background: transparent;
+}
+[aria-expanded="true"] .navbar__toggle-icon::before {
+    transform: translateY(8px) rotate(45deg);
+}
+[aria-expanded="true"] .navbar__toggle-icon::after {
+    transform: translateY(-8px) rotate(-45deg);
+}
 
 .intro {
     display: flex;
@@ -166,6 +185,11 @@ body {
     font-weight: 600;
     font-size: 0.95rem;
     gap: 8px;
+    transition: transform 0.2s var(--transition-smooth);
+}
+
+.btn-primary:hover {
+    transform: translateX(4px);
 }
 
 .btn-primary__icon {
@@ -242,13 +266,19 @@ body {
     align-items: center;
     margin-bottom: 15px;
     border: 1px solid var(--border-light);
+    aspect-ratio: 4 / 5; 
+    overflow: hidden;
 }
 
 .portfolio-card__thumbnail img {
     width: 100%;
-    height: auto;
-    max-height: 45vh;
+    height: 100%;
     object-fit: contain;
+    transition: transform 0.6s var(--transition-smooth);
+}
+
+.portfolio-card:hover .portfolio-card__thumbnail img {
+    transform: scale(1.03);
 }
 
 .portfolio-card__meta {
@@ -267,6 +297,10 @@ body {
 .portfolio-card__name {
     font-size: 1.1rem;
     font-weight: 600;
+}
+
+.portfolio-card--featured .portfolio-card__thumbnail {
+    aspect-ratio: 16 / 9;
 }
 
 .manifesto {
