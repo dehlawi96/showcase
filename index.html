@@ -8,32 +8,37 @@
 </head>
 <body>
 
-    <nav id="nav">
-        <div id="logo-area">
-            <img src="resource/Muhammad Soheb logo.svg" alt="Muhammad Soheb Logo" class="brand-logo-img">
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <img src="resource/Muhammad Soheb logo.svg" alt="Muhammad Soheb Logo" class="navbar__logo-img">
         </div>
-        <ul id="nav-links">
-            <li><a href="#" class="active">Home</a></li>
-            <li><a href="work.html">Work</a></li>
-            <li><a href="#footer">Contact</a></li>
+        
+        <button class="navbar__toggle" id="menu-toggle" aria-expanded="false" aria-label="Toggle navigation menu">
+            <span class="navbar__toggle-icon"></span>
+        </button>
+
+        <ul class="navbar__links" id="nav-list-all">
+            <li><a href="#" class="navbar__link navbar__link--active">Home</a></li>
+            <li><a href="work.html" class="navbar__link">Work</a></li>
+            <li><a href="#contact" class="navbar__link">Contact</a></li>
         </ul>
-        <div id="nav-status">
+        <div class="navbar__status">
             <span>Available for 2026</span>
         </div>
     </nav>
 
     <main>
-        <section class="hero-editorial">
-            <div class="hero-left">
-                <div class="header-post-tag">Based in Delhi, India</div>
-                <h1 class="hero-headline">Muhammad<br><em>Soheb</em></h1>
-                <p class="hero-description">
+        <section class="intro">
+            <div class="intro__content">
+                <span class="intro__location">Based in Delhi, India</span>
+                <h1 class="intro__title">Muhammad<br><em>Soheb</em></h1>
+                <p class="intro__bio">
                     Graphic Designer &amp; Motion Artist. Bridging purposeful graphic design with fluid motion to create visual stories that breathe, grow, and connect.
                 </p>
-                <a href="#selected-works" class="hero-cta-link"><span class="icon-plus">+</span> View Selected Works</a>
+                <a href="#projects" class="btn-primary"><span class="btn-primary__icon">+</span> View Selected Works</a>
             </div>
-            <div class="hero-right">
-                <div class="featured-media-container">
+            <div class="intro__visual">
+                <div class="intro__video-wrapper">
                     <video autoplay loop muted playsinline poster="resource/mountain dreamy paster color.webp">
                         <source src="resource/hero-presentation.mp4" type="video/mp4">
                     </video>
@@ -41,89 +46,87 @@
             </div>
         </section>
 
-        <section id="selected-works" class="editorial-section">
-            <div class="section-header-grid">
-                <h2 class="section-title">Capabilities</h2>
-                <div class="section-intro-text">
+        <section id="projects" class="showcase">
+            <div class="showcase__header">
+                <h2 class="showcase__title">Capabilities</h2>
+                <div class="showcase__lead">
                     <p>Fusing deliberate visual layouts with purposeful kinetics. Exploring the relationship between static structural design systems and tactile motion dynamics to build functional digital expressions.</p>
                 </div>
             </div>
 
-            <div class="works-staggered-grid">
-                <div class="work-card">
-                    <div class="card-image-box">
-                        <img src="resource/mountain dreamy paster color.webp" alt="Mountain Dreamy Poster">
+            <div class="gallery-grid">
+                <article class="portfolio-card">
+                    <div class="portfolio-card__thumbnail">
+                        <img src="resource/mountain dreamy paster color.webp" alt="Mountain Dreamy Poster Layer" loading="lazy">
                     </div>
-                    <div class="card-meta">
-                        <span class="card-num">001</span>
-                        <h3 class="card-title">Mountain Dreamy</h3>
+                    <div class="portfolio-card__meta">
+                        <span class="portfolio-card__index">001</span>
+                        <h3 class="portfolio-card__name">Mountain Dreamy</h3>
                     </div>
-                </div>
+                </article>
 
-                <div class="work-card">
-                    <div class="card-image-box">
-                        <img src="resource/3 by 3 pixel photo.jpeg" alt="3 by 3 Pixel Art">
+                <article class="portfolio-card">
+                    <div class="portfolio-card__thumbnail">
+                        <img src="resource\3 by 3 pixel photo.jpeg" alt="3 by 3 Pixel Art Grid" loading="lazy">
                     </div>
-                    <div class="card-meta">
-                        <span class="card-num">002</span>
-                        <h3 class="card-title">3 by 3 Art</h3>
+                    <div class="portfolio-card__meta">
+                        <span class="portfolio-card__index">002</span>
+                        <h3 class="portfolio-card__name">3 by 3 Art</h3>
                     </div>
-                </div>
+                </article>
 
-                <div class="work-card full-width-card">
-                    <div class="card-image-box">
-                        <img src="resource/end of summer poster.webp" alt="End of Summer Poster">
+                <article class="portfolio-card portfolio-card--featured">
+                    <div class="portfolio-card__thumbnail">
+                        <img src="resource/end of summer poster.webp" alt="End of Summer Poster Design" loading="lazy">
                     </div>
-                    <div class="card-meta">
-                        <span class="card-num">003</span>
-                        <h3 class="card-title">End of Summer</h3>
+                    <div class="portfolio-card__meta">
+                        <span class="portfolio-card__index">003</span>
+                        <h3 class="portfolio-card__name">End of Summer</h3>
                     </div>
-                </div>
+                </article>
             </div>
         </section>
 
-        <section class="editorial-section border-top">
-            <div class="section-header-grid">
-                <h2 class="section-title">The Approach</h2>
-                <div class="section-intro-text text-large">
+        <section class="manifesto">
+            <div class="manifesto__header">
+                <h2 class="manifesto__title">The Approach</h2>
+                <div class="manifesto__statement">
                     <p>Design is an act of translation. It is about turning complex structural logic into highly intuitive, raw visual languages. No fluff, just impact.</p>
                 </div>
             </div>
         </section>
     </main>
 
-    <footer id="footer">
-        <div class="footer-top-grid">
-            <div class="footer-col brand-col">
+    <footer id="contact" class="footer">
+        <div class="footer__main">
+            <div class="footer__block footer__block--cta">
                 <h3>Start a Conversation</h3>
-                <a href="mailto:info@mysite.com" class="footer-email-link"><span class="icon-plus">+</span> Email Me</a>
+                <a href="mailto:muhammadsoheb91@gmail.com" class="footer__email"><span class="footer__email-icon">+</span> Email Me</a>
             </div>
             
-            <div class="footer-col links-col">
-                <ul>
+            <div class="footer__block footer__block--nav">
+                <ul class="footer__links">
                     <li><a href="#">Home</a></li>
                     <li><a href="work.html">Work</a></li>
-                    <li><a href="#footer">Contact</a></li>
                 </ul>
             </div>
 
-            <div class="footer-col contact-col">
-                <p class="contact-detail">info@mysite.com</p>
-                <p class="contact-detail">Delhi, India</p>
+            <div class="footer__block footer__block--info">
+                <p class="footer__detail">Delhi, India</p>
             </div>
 
-            <div class="footer-col legal-col">
-                <a href="#">Privacy Policy</a>
-                <a href="#">Accessibility Statement</a>
-                <div class="footer-socials">
-                    <a href="https://instagram.com" target="_blank" rel="noopener">Instagram</a>
-                    <a href="https://bsky.app" target="_blank" rel="noopener">Bluesky</a>
-                    <a href="https://github.com" target="_blank" rel="noopener">GitHub</a>
+            <div class="footer__block footer__block--legal">
+                <a href="#" class="footer__legal-link">Privacy Policy</a>
+                <a href="#" class="footer__legal-link">Accessibility Statement</a>
+                <div class="footer__socials">
+                    <a href="https://instagram.com/9.ion1" target="_blank" rel="noopener">Instagram</a>
+                    <a href="https://bsky.app/profile/9ion1.bsky.social" target="_blank" rel="noopener">Bluesky</a>
+                    <a href="https://github.com/dehlawi96" target="_blank" rel="noopener">GitHub</a>
                 </div>
             </div>
         </div>
 
-        <div class="footer-bottom-bar">
+        <div class="footer__bottom">
             <p>&copy; 2026 by Muhammad Soheb. Engineered with clarity.</p>
         </div>
     </footer>
