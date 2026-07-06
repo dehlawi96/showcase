@@ -16,6 +16,30 @@
     box-sizing: border-box;
 }
 
+/* Global focus styling for WCAG keyboard navigation compliance */
+*:focus-visible {
+    outline: 2px solid var(--text-color);
+    outline-offset: 4px;
+}
+
+/* Accessible skip-to-content link (hidden off-screen until focused) */
+.skip-link {
+    position: absolute;
+    top: -100px;
+    left: 20px;
+    background: var(--text-color);
+    color: var(--bg-color);
+    padding: 10px 20px;
+    z-index: 999;
+    font-weight: 600;
+    text-decoration: none;
+    transition: top 0.2s ease;
+}
+
+.skip-link:focus {
+    top: 20px;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -28,6 +52,19 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
+/* Global shared structural component */
+.intro__location {
+    font-size: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 700;
+    margin-bottom: 20px;
+    color: #666;
+    border-left: 2px solid var(--text-color);
+    padding-left: 8px;
+}
+
+/* Navigation Layout */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -92,6 +129,7 @@ body {
     display: none;
 }
 
+/* Mobile Toggle Hamburger Icon */
 .navbar__toggle {
     background: none;
     border: none;
@@ -121,6 +159,7 @@ body {
 .navbar__toggle-icon::before { top: -8px; }
 .navbar__toggle-icon::after { bottom: -8px; }
 
+/* Hamburger Menu Animations via State Attribute */
 [aria-expanded="true"] .navbar__toggle-icon {
     background: transparent;
 }
@@ -131,6 +170,7 @@ body {
     transform: translateY(-8px) rotate(-45deg);
 }
 
+/* Footer Global Layout */
 .footer {
     background-color: var(--footer-bg);
     color: var(--footer-text);
@@ -229,6 +269,7 @@ body {
     color: rgba(255, 255, 255, 0.5);
 }
 
+/* Shared Media Queries */
 @media (min-width: 768px) {
     .navbar {
         padding: 30px 50px;
@@ -267,5 +308,19 @@ body {
     .footer__block--legal {
         align-items: flex-end;
         text-align: right;
+    }
+}
+
+/* Global preference handling for motion sensitivity */
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+    *, ::before, ::after {
+        animation-delay: -1ms !important;
+        animation-duration: -1ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0s !important;
+        scroll-behavior: auto !important;
     }
 }

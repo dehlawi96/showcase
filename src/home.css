@@ -1,5 +1,3 @@
-@import "base.css";
-
 .intro {
     display: flex;
     flex-direction: column;
@@ -11,17 +9,6 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
-}
-
-.intro__location {
-    font-size: 0.75rem;
-    text-transform: uppercase;
-    letter-spacing: 2px;
-    font-weight: 700;
-    margin-bottom: 20px;
-    color: #666;
-    border-left: 2px solid var(--text-color);
-    padding-left: 8px;
 }
 
 .intro__title {
@@ -224,6 +211,7 @@
         padding-top: 30px;
     }
 
+    /* Asymmetric column layout stagger */
     .portfolio-card:nth-child(even) {
         transform: translateY(60px);
     }
