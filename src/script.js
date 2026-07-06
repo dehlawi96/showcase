@@ -1,13 +1,12 @@
 /**
- * UI & Accessibility Engine — Muhammad Soheb Portfolio
- * Handles mobile navigation toggles and state mutations for WCAG compliance.
+ * UI & Accessibility Interactions — Muhammad Soheb Portfolio
+ * Handles mobile navigation visibility toggles and state mutations.
  */
 
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('menu-toggle');
     const navList = document.getElementById('nav-list-all');
 
-    // Safe initialization guard clause
     if (!menuToggle || !navList) return;
 
     /**
@@ -23,13 +22,12 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    // Main interaction pointer execution loop
     menuToggle.addEventListener('click', () => {
         const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
         toggleNavigation(!isExpanded);
     });
 
-    // Close layout surface on link selections (Ensures smooth internal hash jumps)
+    // Close mobile layout menu on link selections (Ensures smooth internal anchor jumps)
     navList.addEventListener('click', (e) => {
         if (e.target.closest('a')) {
             toggleNavigation(false);
@@ -40,7 +38,19 @@ document.addEventListener('DOMContentLoaded', () => {
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
             toggleNavigation(false);
-            menuToggle.focus(); // Retain visual tab context on triggering element
+            menuToggle.focus();
         }
     });
+
+    // Media Query Listener: Resolves state issue when window resizes to desktop widths
+    const desktopMediaQuery = window.matchMedia('(min-width: 768px)');
+    const handleViewportChange = (e) => {
+        if (e.matches) {
+            // Force state to false on desktop so aria-expanded doesn't sit frozen as true
+            toggleNavigation(false);
+        }
+    };
+    
+    desktopMediaQuery.addEventListener('change', handleViewportChange);
+    handleViewportChange(desktopMediaQuery); // Run initial verification check
 });
