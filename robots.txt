@@ -6,3 +6,5 @@ Allow: /
 
 # Prevent search engines from indexing the uncompiled engineering asset folder
 Disallow: /src/
+
+Sitemap: https://dehlawi96.github.io/showcase/sitemap.xml

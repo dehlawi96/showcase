@@ -24,7 +24,7 @@ Portfolio
 │     ├─ look-up-at-sky.webp
 │     ├─ roman-brutalism.webp
 │     └─ sekiro-brutalism.webp
-├─ robot.txt      # Search crawler ingestion parameters
+├─ robots.txt      # Search crawler ingestion parameters
 ├─ sitemap.xml    # Synchronized indexing directory map
 └─ src/     # Executable runtime environment
    ├─ base.css    # Global tokens, landmarks, accessibility hooks
