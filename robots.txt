@@ -1,13 +1,8 @@
 # Robots.txt — Muhammad Soheb Portfolio
-# Target: All search engines
 User-agent: *
 
-# Allow crawling of the entire public portfolio surface
+# Allow crawling of the entire public platform surface, including all static resources
 Allow: /
 
-# Disallow specific asset configuration directories or temporary paths
+# Prevent search engines from indexing the uncompiled engineering asset folder
 Disallow: /src/
-Disallow: /resource/favicon.ico
-
-# Explicit pointer to the XML Sitemap location for search indexing pipelines
-Sitemap: https://dehlawi96.github.io/showcase/sitemap.xml
