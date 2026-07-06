@@ -33,11 +33,11 @@ Portfolio
    └─ script.js   # Core interaction & focus loop engine
 
 ```
-## Core Parameters
+## Technical Overview
 
-* **Design Paradigm** — Asymmetric composition, strict monochromatic framework, intentional layout shifts, and heavy typographic hierarchy utilizing standard web-safe systems.
-* **Performance** — Unbundled parallel CSS network requests to completely remove render-blocking pipeline latency. Zero third-party dependencies or heavy tracking frameworks.
-* **Accessibility** — Complete WCAG 2.1 Level AA compliance engine featuring safe native operating system overrides for `prefers-reduced-motion`, programmatic focus-trapping routines, structural land-use semantic markers, and skip-link redirection blocks.
+* **Design Approach** — High visual contrast, editorial grid choices, monospaced functional indexes, and standard system typography stacks.
+* **Performance** — Removed internal `@import` dependencies inside the CSS. Stylesheets are loaded via standard parallel HTML links to avoid render-blocking request delays.
+* **Accessibility** — Built to actively support work toward WCAG 2.1 Level AA benchmarks. Includes a visible keyboard skip-to-content link, global system media adjustments for `prefers-reduced-motion`, semantic HTML structures, and responsive `aria-expanded` interaction handling.
 
 ---
 Engineered with structural clarity. 2026.
