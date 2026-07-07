@@ -1,10 +1,7 @@
 # Robots.txt — Muhammad Soheb Portfolio
 User-agent: *
 
-# Allow crawling of the entire public platform surface, including all static resources
+# Allow crawling of the entire public platform surface, including all static assets, styles, and scripts
 Allow: /
-
-# Prevent search engines from indexing the uncompiled engineering asset folder
-Disallow: /src/
 
 Sitemap: https://dehlawi96.github.io/showcase/sitemap.xml
