@@ -22,151 +22,144 @@
     <meta name="twitter:image" content="https://dehlawi96.github.io/showcase/resource/Poster/Ethereal-poster.webp">
 
     <link rel="stylesheet" href="src/base.css">
-    <link rel="stylesheet" href="src/home.css">
-    <link rel="stylesheet" href="src/archive.css">
+    <link rel="stylesheet" href="src/home.css"> 
+    <link rel="stylesheet" href="src/archive.css"> 
 </head>
 <body>
 
-    <a href="#main-archive-content" class="skip-link">Skip to main content</a>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
 
-    <header class="navbar">
-        <div class="navbar__brand">
-            <a href="index.html" class="navbar__logo">
-                <img src="resource/Muhammad Soheb logo.svg" alt="Muhammad Soheb Logo" class="navbar__logo-img" width="50" height="50" style="display: inline-block; vertical-align: middle; margin-right: 10px;">
-                Muhammad Soheb
-            </a>
+    <nav class="navbar">
+        <div class="navbar__logo">
+            <img src="resource/Muhammad Soheb logo.svg" alt="Muhammad Soheb Logo" class="navbar__logo-img" width="50" height="50">
         </div>
         
-        <div class="navbar__status">
-            <span class="status-indicator status-indicator--active"></span>
-            <span class="status-text">Available for Freelance & Contract (2026)</span>
-        </div>
-
-        <button class="navbar__toggle" id="menu-toggle" aria-expanded="false" aria-controls="nav-list-all" aria-label="Toggle navigation menu">
+        <button class="navbar__toggle" id="menu-toggle" aria-expanded="false" aria-label="Toggle navigation menu">
             <span class="navbar__toggle-icon"></span>
         </button>
 
-        <nav class="navbar__menu">
-            <ul class="navbar__links" id="nav-list-all">
-                <li><a href="index.html" class="nav-link">Home</a></li>
-                <li><a href="work.html" class="nav-link nav-link--active" aria-current="page">Work</a></li>
-                <li><a href="index.html#contact" class="nav-link">Contact</a></li>
-            </ul>
-        </nav>
-    </header>
+        <ul class="navbar__links" id="nav-list-all">
+            <li><a href="index.html" class="navbar__link">Home</a></li>
+            <li><a href="#" class="navbar__link navbar__link--active">Work</a></li>
+            <li><a href="index.html#contact" class="navbar__link">Contact</a></li>
+        </ul>
+        <div class="navbar__status">
+            <span>Available for 2026</span>
+        </div>
+    </nav>
 
-    <main id="main-archive-content">
-        
-        <section class="archive-controls" aria-label="Project filtering directory">
-            <button class="filter-btn filter-btn--active" data-filter="all">All index</button>
+    <main id="main-content">
+        <section class="archive-controls" aria-label="Project filtering">
+            <button class="filter-btn filter-btn--active" data-filter="all">All Projects</button>
             <button class="filter-btn" data-filter="graphic">Graphic Design</button>
-            <button class="filter-btn" data-filter="motion">Motion System</button>
+            <button class="filter-btn" data-filter="motion">Motion Art</button>
             <button class="filter-btn" data-filter="brutalism">Brutalism</button>
         </section>
 
-        <section class="archive-grid" aria-label="Portfolio showcases matching current filter constraints">
-            
-            <article class="portfolio-card portfolio-card--interactive" data-category="graphic" data-project="ancient-drawing" role="button" tabindex="0" aria-label="View Ancient Drawing case study details">
-                <div class="portfolio-card__thumbnail">
-                    <img src="resource/Poster/Ancient-drawing-poster.webp" alt="Ancient Drawing Poster Design Layout" loading="lazy" width="800" height="1000">
-                </div>
-                <div class="portfolio-card__meta">
-                    <span class="portfolio-card__index">001</span>
-                    <h3 class="portfolio-card__name">Ancient Drawing</h3>
-                </div>
-            </article>
-
-            <article class="portfolio-card portfolio-card--interactive" data-category="motion" data-project="ethereal" role="button" tabindex="0" aria-label="View Ethereal Kinetic Poster system details">
-                <div class="portfolio-card__thumbnail">
-                    <img src="resource/Poster/Ethereal-poster.webp" alt="Ethereal Motion Kinetic Type Execution Layout with fluid kinetic background" loading="lazy" width="800" height="1000">
-                </div>
-                <div class="portfolio-card__meta">
-                    <span class="portfolio-card__index">002</span>
-                    <h3 class="portfolio-card__name">Ethereal</h3>
-                </div>
-            </article>
-
-            <article class="portfolio-card portfolio-card--interactive" data-category="graphic" data-project="kobe-mosque" role="button" tabindex="0" aria-label="View Kobe Mosque case study details">
-                <div class="portfolio-card__thumbnail">
-                    <img src="resource/Poster/Kobe-Mosque-Japan.webp" alt="Kobe Mosque Japan Design Layout" loading="lazy" width="800" height="1000">
-                </div>
-                <div class="portfolio-card__meta">
-                    <span class="portfolio-card__index">003</span>
-                    <h3 class="portfolio-card__name">Kobe Mosque, Japan</h3>
-                </div>
-            </article>
-
-            <article class="portfolio-card portfolio-card--interactive" data-category="graphic" data-project="look-up" role="button" tabindex="0" aria-label="View Look Up at Sky case study details">
-                <div class="portfolio-card__thumbnail">
-                    <img src="resource/Poster/look-up-at-sky.webp" alt="Look Up At The Sky Minimalist Poster" loading="lazy" width="800" height="1000">
-                </div>
-                <div class="portfolio-card__meta">
-                    <span class="portfolio-card__index">004</span>
-                    <h3 class="portfolio-card__name">Look Up at Sky</h3>
-                </div>
-            </article>
-
-            <article class="portfolio-card portfolio-card--interactive" data-category="brutalism" data-project="roman-brutalism" role="button" tabindex="0" aria-label="View Roman Brutalism case study details">
-                <div class="portfolio-card__thumbnail">
-                    <img src="resource/Poster/roman-brutalism.webp" alt="Roman Brutalism Graphic Layout" loading="lazy" width="800" height="1000">
-                </div>
-                <div class="portfolio-card__meta">
-                    <span class="portfolio-card__index">005</span>
-                    <h3 class="portfolio-card__name">Roman Brutalism</h3>
-                </div>
-            </article>
-
-            <article class="portfolio-card portfolio-card--interactive portfolio-card--featured" data-category="brutalism motion" data-project="sekiro-brutalism" role="button" tabindex="0" aria-label="View Sekiro Brutalism case study details">
-                <div class="portfolio-card__thumbnail">
-                    <img src="resource/Poster/sekiro-brutalism.webp" alt="Sekiro Brutalism Poster Design" loading="lazy" width="1600" height="1000">
-                </div>
-                <div class="portfolio-card__meta">
-                    <span class="portfolio-card__index">006</span>
-                    <h3 class="portfolio-card__name">Sekiro Brutalism</h3>
-                </div>
-            </article>
-
-        </section>
-
-        <div id="project-case-drawer" class="drawer" aria-hidden="true" role="dialog" aria-labelledby="drawer-heading-title">
-            <div class="drawer__overlay" tabindex="-1"></div>
-            <div class="drawer__wrapper">
-                <button class="drawer__close" id="close-case-drawer" aria-label="Close project showcase view panel">&times; close</button>
-                <div class="drawer__scroll-container" id="drawer-dynamic-content-root">
-                    
-                    <div class="case-study-view">
-                        <header class="case-header">
-                            <span class="case-header__index" id="case-index">000</span>
-                            <h2 class="case-header__title" id="drawer-heading-title">Project Title Placeholder</h2>
-                            <div class="case-header__specs">
-                                <p><strong>Category:</strong> <span id="case-category">—</span></p>
-                                <p><strong>System Stack:</strong> <span id="case-stack">—</span></p>
-                            </div>
-                        </header>
-
-                        <section class="case-section">
-                            <h3 class="case-section__heading">01. Conceptual Intent</h3>
-                            <p class="case-section__body" id="case-intent-text">
-                                Dynamic modular layout data placeholder framework.
-                            </p>
-                        </section>
-
-                        <section class="case-section">
-                            <h3 class="case-section__heading">02. Primary Exhibition Layer</h3>
-                            <div class="case-media-container" id="case-primary-media"></div>
-                        </section>
-
-                        <section class="case-section">
-                            <h3 class="case-section__heading">03. Process Variables &amp; Layout Frameworks</h3>
-                            <div class="process-grid" id="case-process-grid"></div>
-                        </section>
+        <section class="showcase">
+            <div class="gallery-grid" id="work-grid">
+                
+                <article class="portfolio-card portfolio-card--interactive" data-category="graphic" data-project="ancient-drawing" role="button" tabindex="0" aria-label="View Ancient Drawing case study details">
+                    <div class="portfolio-card__thumbnail">
+                        <img src="resource/Poster/Ancient-drawing-poster.webp" alt="Ancient Drawing Poster Design Layout" loading="lazy" width="800" height="1000">
                     </div>
+                    <div class="portfolio-card__meta">
+                        <span class="portfolio-card__index">001</span>
+                        <h3 class="portfolio-card__name">Ancient Drawing</h3>
+                    </div>
+                </article>
 
-                </div>
+                <article class="portfolio-card portfolio-card--interactive" data-category="motion" data-project="ethereal" role="button" tabindex="0" aria-label="View Ethereal case study details">
+                    <div class="portfolio-card__thumbnail">
+                        <img src="resource/Poster/Ethereal-poster.webp" alt="Ethereal Art Poster with fluid kinetic background" loading="lazy" width="800" height="1000">
+                    </div>
+                    <div class="portfolio-card__meta">
+                        <span class="portfolio-card__index">002</span>
+                        <h3 class="portfolio-card__name">Ethereal</h3>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-card--interactive" data-category="graphic" data-project="kobe-mosque" role="button" tabindex="0" aria-label="View Kobe Mosque case study details">
+                    <div class="portfolio-card__thumbnail">
+                        <img src="resource/Poster/Kobe-Mosque-Japan.webp" alt="Kobe Mosque Japan Design Layout" loading="lazy" width="800" height="1000">
+                    </div>
+                    <div class="portfolio-card__meta">
+                        <span class="portfolio-card__index">003</span>
+                        <h3 class="portfolio-card__name">Kobe Mosque, Japan</h3>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-card--interactive" data-category="graphic" data-project="look-up" role="button" tabindex="0" aria-label="View Look Up at Sky case study details">
+                    <div class="portfolio-card__thumbnail">
+                        <img src="resource/Poster/look-up-at-sky.webp" alt="Look Up At The Sky Minimalist Poster" loading="lazy" width="800" height="1000">
+                    </div>
+                    <div class="portfolio-card__meta">
+                        <span class="portfolio-card__index">004</span>
+                        <h3 class="portfolio-card__name">Look Up at Sky</h3>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-card--interactive" data-category="brutalism" data-project="roman-brutalism" role="button" tabindex="0" aria-label="View Roman Brutalism case study details">
+                    <div class="portfolio-card__thumbnail">
+                        <img src="resource/Poster/roman-brutalism.webp" alt="Roman Brutalism Graphic Layout" loading="lazy" width="800" height="1000">
+                    </div>
+                    <div class="portfolio-card__meta">
+                        <span class="portfolio-card__index">005</span>
+                        <h3 class="portfolio-card__name">Roman Brutalism</h3>
+                    </div>
+                </article>
+
+                <article class="portfolio-card portfolio-card--interactive portfolio-card--featured" data-category="brutalism motion" data-project="sekiro-brutalism" role="button" tabindex="0" aria-label="View Sekiro Brutalism case study details">
+                    <div class="portfolio-card__thumbnail">
+                        <img src="resource/Poster/sekiro-brutalism.webp" alt="Sekiro Brutalism Poster Design" loading="lazy" width="1600" height="1000">
+                    </div>
+                    <div class="portfolio-card__meta">
+                        <span class="portfolio-card__index">006</span>
+                        <h3 class="portfolio-card__name">Sekiro Brutalism</h3>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+    </main>
+
+    <div class="drawer" id="case-study-drawer" aria-hidden="true" role="dialog">
+        <div class="drawer__overlay" id="drawer-overlay"></div>
+        <div class="drawer__content">
+            <button class="drawer__close" id="drawer-close-btn" aria-label="Close case study">&times; Close</button>
+            
+            <div class="case-study-view">
+                <header class="case-header">
+                    <span class="case-header__index" id="case-index">000</span>
+                    <h2 class="case-header__title" id="case-title">Project Title Placeholder</h2>
+                    <div class="case-header__specs">
+                        <p><strong>Category:</strong> <span id="case-category">—</span></p>
+                        <p><strong>System/Stack:</strong> <span id="case-stack">—</span></p>
+                    </div>
+                </header>
+
+                <section class="case-section">
+                    <h3 class="case-section__heading">01. Conceptual Intent</h3>
+                    <p class="case-section__body" id="case-intent-text">
+                        This section holds the narrative behind your design. Why was it made, what problems does it try to resolve visually, or what structural patterns were chosen.
+                    </p>
+                </section>
+
+                <section class="case-section">
+                    <h3 class="case-section__heading">02. Primary Application</h3>
+                    <div class="case-media-container" id="case-primary-media"></div>
+                </section>
+
+                <section class="case-section">
+                    <h3 class="case-section__heading">03. Iterations & Process Variables</h3>
+                    <p class="case-section__body">
+                        A view of grid foundations, typography specs, vector wireframes, alternative layout structures, or early rough sketches.
+                    </p>
+                    <div class="process-grid" id="case-process-grid"></div>
+                </section>
             </div>
         </div>
-
-    </main>
+    </div>
 
     <footer id="contact" class="footer">
         <div class="footer__main">
@@ -174,18 +167,15 @@
                 <h3>Start a Conversation</h3>
                 <a href="mailto:muhammadsoheb91@gmail.com" class="footer__email"><span class="footer__email-icon">+</span> Email Me</a>
             </div>
-            
             <div class="footer__block footer__block--nav">
                 <ul class="footer__links">
                     <li><a href="index.html">Home</a></li>
                     <li><a href="#">Work</a></li>
                 </ul>
             </div>
-
             <div class="footer__block footer__block--info">
                 <p class="footer__detail">Delhi, India</p>
             </div>
-
             <div class="footer__block footer__block--legal">
                 <a href="privacy.html" class="footer__legal-link">Privacy Policy</a>
                 <a href="accessibility.html" class="footer__legal-link">Accessibility Statement</a>
@@ -196,12 +186,12 @@
                 </div>
             </div>
         </div>
-
         <div class="footer__bottom">
             <p>&copy; 2026 by Muhammad Soheb. Engineered with clarity.</p>
         </div>
     </footer>
 
+    <script src="src/script.js"></script>
     <script src="src/archive.js"></script>
 </body>
 </html>

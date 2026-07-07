@@ -5,245 +5,189 @@
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    /* ==========================================================================\
-       1. Dynamic Sorting / Index Filtering Logic
-       ========================================================================== */
+    /* ==========================================
+                    FILTER SYSTEM
+       ========================================== */
     const filterButtons = document.querySelectorAll('.filter-btn');
     const portfolioCards = document.querySelectorAll('.portfolio-card');
 
-    if (filterButtons.length && portfolioCards.length) {
-        filterButtons.forEach(button => {
-            button.addEventListener('click', (e) => {
-                e.preventDefault();
-                filterButtons.forEach(btn => btn.classList.remove('filter-btn--active'));
-                button.classList.add('filter-btn--active');
+    filterButtons.forEach(button => {
+        button.addEventListener('click', () => {
+            filterButtons.forEach(btn => btn.classList.remove('filter-btn--active'));
+            button.classList.add('filter-btn--active');
 
-                const filterValue = button.getAttribute('data-filter');
+            const filterValue = button.getAttribute('data-filter');
 
-                portfolioCards.forEach(card => {
-                    const categories = card.getAttribute('data-category') || '';
-                    if (filterValue === 'all' || categories.includes(filterValue)) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
+            portfolioCards.forEach(card => {
+                // Fallback to an empty string to prevent .includes() from crashing on null values
+                const categories = card.getAttribute('data-category') || ''; 
+                
+                if (filterValue === 'all' || categories.includes(filterValue)) {
+                    card.style.display = 'flex';
+                } else {
+                    card.style.display = 'none';
+                }
             });
         });
-    }
+    });
 
-    /* ==========================================================================\
-       2. Isolated Portfolio Case Study Local Database Registry (Raw Content Core)
-       ========================================================================== */
+    /* ==========================================
+            CASE STUDY DATA STORAGE DIRECTORY
+       ========================================== */
     const projectDatabase = {
-        'ancient-drawing': {
-            index: '001',
-            title: 'Ancient Drawing',
-            discipline: 'Graphic Design',
-            timeline: 'Spring 2025',
-            description: '<p>A deep exploration into ancient illustrative aesthetics translated into modern programmatic vector grids. This project interrogates how high-contrast linework can preserve raw textural historical context when constrained into systematic layouts.</p>',
-            hasVideo: false,
-            mediaAsset: 'resource/Poster/Ancient-drawing-poster.webp',
-            mediaAlt: 'Detailed breakdown framework displaying line layouts for the Ancient Drawing compilation.'
+        "ancient-drawing": {
+            index: "001",
+            title: "Ancient Drawing",
+            category: "Graphic Layout",
+            stack: "InDesign / Illustrator",
+            intent: "A deep dive into deliberate typographic arrangements, balancing classical illustrative elements with stark grid boundaries.",
+            primaryMedia: '<img src="resource/Poster/Ancient-drawing-poster.webp" alt="Ancient Drawing Poster">',
+            iterations: [
+                "resource/Poster/Ancient-drawing-poster.webp" // Cleaned up duplicate image tracking here
+            ]
         },
-        'ethereal': {
-            index: '002',
-            title: 'Ethereal',
-            discipline: 'Motion System',
-            timeline: 'Winter 2025',
-            description: '<p>An experimentation in breaking standard static layout loops. Type elements transition fluidly across calculated mathematical waves, blending temporal kinetic animation parameters with deliberate editorial asymmetry.</p>',
-            hasVideo: true,
-            mediaAsset: 'resource/Video/Ethereal-render', // Shared root name for handling dual extension pipelines
-            mediaAlt: 'Fluid morphing simulation representing modern typographic transformations.'
+        "ethereal": {
+            index: "002",
+            title: "Ethereal",
+            category: "Motion Art Systems",
+            stack: "After Effects / Premiere",
+            intent: "Exploration of kinetic energy loops. Built with intentional easing parameters to generate weightless, fluid background transitions.",
+            primaryMedia: '<img src="resource/Poster/Ethereal-poster.webp" alt="Ethereal Visual Layout">',
+            iterations: []
         },
-        'gothic-fluidity': {
-            index: '003',
-            title: 'Gothic Fluidity',
-            discipline: 'Graphic Design',
-            timeline: 'Autumn 2025',
-            description: '<p>Juxtaposing historical blackletter typographical geometry against fluid, unpredictable organic liquified elements. Designed to bridge historical print paradigms with contemporary radical layout architectures.</p>',
-            hasVideo: false,
-            mediaAsset: 'resource/Poster/Gothic-fluidity-poster.webp',
-            mediaAlt: 'Gothic fluid specimen layout sheet visualizing dynamic type treatments.'
+        "kobe-mosque": {
+            index: "003",
+            title: "Kobe Mosque, Japan",
+            category: "Editorial Design",
+            stack: "Illustrator / Typography Systems",
+            intent: "Minimalist layout celebrating architectural structure through structural geometric type layouts and stark white-space framing.",
+            primaryMedia: '<img src="resource/Poster/Kobe-Mosque-Japan.webp" alt="Kobe Mosque Layout">',
+            iterations: []
         },
-        'helvetica': {
-            index: '004',
-            title: 'Helvetica',
-            discipline: 'Motion System',
-            timeline: 'Summer 2025',
-            description: '<p>A strict modern tribute to Swiss visual principles. Utilizing rigid spatial grids, this kinetic system scales, shifts, and stacks pure linguistic messages into a shifting rhythm purely driven by structured audio pacing.</p>',
-            hasVideo: true,
-            mediaAsset: 'resource/Video/Helvetica-render',
-            mediaAlt: 'Swiss modern alignment kinetic animation sequences.'
+        "look-up": {
+            index: "004",
+            title: "Look Up at Sky",
+            category: "Minimal Brutalism",
+            stack: "Print Media / Layout",
+            intent: "High contrast typographical hierarchy highlighting scale relationships between human orientation indicators and void spaces.",
+            primaryMedia: '<img src="resource/Poster/look-up-at-sky.webp" alt="Look Up At Sky Layout">',
+            iterations: []
         },
-        'klimt': {
-            index: '005',
-            title: 'Klimt Editorial',
-            discipline: 'Graphic Design',
-            timeline: 'Mid 2025',
-            description: '<p>An analytical multi-page structural catalog designed for an exhibition presenting Secessionist visual patterns. The grid scales around historical structural thresholds, leveraging dense negative typography blocks.</p>',
-            hasVideo: false,
-            mediaAsset: 'resource/Poster/Klimt-poster.webp',
-            mediaAlt: 'Editorial structural spreads showing internal design system frameworks.'
+        "roman-brutalism": {
+            index: "005",
+            title: "Roman Brutalism",
+            category: "Graphic Structural Layout",
+            stack: "Photoshop / InDesign",
+            intent: "Juxtaposing historical classical art figures into heavy, industrial, unyielding typographic blocks to evoke a tangible feeling of weight.",
+            primaryMedia: '<img src="resource/Poster/roman-brutalism.webp" alt="Roman Brutalism Poster">',
+            iterations: []
         },
-        'schizophrenia': {
-            index: '006',
-            title: 'Schizophrenia',
-            discipline: 'Motion System',
-            timeline: 'Early 2025',
-            description: '<p>A kinetic visual system exploring psychological distress metaphors. This configuration works with chaotic typographic fractures, rapid focal-length fluctuations, and sharp temporal shifts to deliver a visceral sensory experience.</p>',
-            hasVideo: true,
-            mediaAsset: 'resource/Video/Schizophrenia-render',
-            mediaAlt: 'Kinetic abstraction sequences utilizing fast typography distortions.'
+        "sekiro-brutalism": {
+            index: "006",
+            title: "Sekiro Brutalism",
+            category: "Motion / Visual Identity",
+            stack: "After Effects / Vector Systems",
+            intent: "A fast, mechanical tribute to gaming mechanics through brutal typographic motion loops, high contrast framing, and sharp cuts.",
+            primaryMedia: '<img src="resource/Poster/sekiro-brutalism.webp" alt="Sekiro Brutalism Project Frame">',
+            iterations: []
         }
     };
 
-    /* ==========================================================================\
-       3. High-Fidelity Slide-Out Core Drawer Controller Engine
-       ========================================================================== */
-    const drawer = document.getElementById('project-case-drawer');
-    const drawerOverlay = drawer ? drawer.querySelector('.drawer__overlay') : null;
-    const drawerWrapper = drawer ? drawer.querySelector('.drawer__wrapper') : null;
-    const drawerCloseBtn = document.getElementById('close-case-drawer');
-    const contentRoot = document.getElementById('drawer-dynamic-content-root');
-    let historicalActiveElement = null; // Tracking pointer to restore system keyboard focus loop safely
+    /* ==========================================
+        DRAWER CONTROLLER ENGINE (OPEN / CLOSE)
+       ========================================== */
+    const drawer = document.getElementById('case-study-drawer');
+    const drawerOverlay = document.getElementById('drawer-overlay');
+    const drawerCloseBtn = document.getElementById('drawer-close-btn');
+    
+    // Target fields inside template drawer
+    const caseIndex = document.getElementById('case-index');
+    const caseTitle = document.getElementById('case-title');
+    const caseCategory = document.getElementById('case-category');
+    const caseStack = document.getElementById('case-stack');
+    const caseIntentText = document.getElementById('case-intent-text');
+    const casePrimaryMedia = document.getElementById('case-primary-media');
+    const caseProcessGrid = document.getElementById('case-process-grid');
 
-    if (!drawer || !contentRoot) return; // Fail gracefully if script runs on unmatched structural environment
+    let previousActiveElement = null;
 
-    // Interactive Core Action Matrix
-    const toggleDrawerVisibility = (projectKey = null, makeVisible = false) => {
-        if (makeVisible && projectKey && projectDatabase[projectKey]) {
-            historicalActiveElement = document.activeElement; // Lock current focused component
-            
-            // Re-render payload injection
-            const records = projectDatabase[projectKey];
-            let visualMediaBlock = '';
+    const openCaseStudy = (projectId) => {
+        const data = projectDatabase[projectId];
+        if (!data) return;
 
-            if (records.hasVideo) {
-                // Generates standardized modern web fallback container systems safely
-                visualMediaBlock = `
-                    <div class="case-section__media-wrapper">
-                        <video autoplay loop muted playsinline aria-label="${records.mediaAlt}">
-                            <source src="${records.mediaAsset}.mp4" type="video/mp4">
-                            <source src="${records.mediaAsset}.webm" type="video/webm">
-                            Your browser loop system doesn't support direct inline tracking parameters for integrated video.
-                        </video>
-                    </div>
-                `;
+        // Defensive checks to verify inner template regions exist before mapping text
+        if (caseIndex) caseIndex.textContent = data.index;
+        if (caseTitle) caseTitle.textContent = data.title;
+        if (caseCategory) caseCategory.textContent = data.category;
+        if (caseStack) caseStack.textContent = data.stack;
+        if (caseIntentText) caseIntentText.textContent = data.intent;
+        if (casePrimaryMedia) casePrimaryMedia.innerHTML = data.primaryMedia;
+
+        if (caseProcessGrid) {
+            caseProcessGrid.innerHTML = '';
+            if (data.iterations && data.iterations.length > 0) {
+                data.iterations.forEach(imgUrl => {
+                    const imgEl = document.createElement('img');
+                    imgEl.src = imgUrl;
+                    imgEl.alt = `${data.title} Process Variation Frame`;
+                    imgEl.loading = "lazy";
+                    caseProcessGrid.appendChild(imgEl);
+                });
             } else {
-                visualMediaBlock = `
-                    <div class="case-section__media-wrapper">
-                        <img src="${records.mediaAsset}" alt="${records.mediaAlt}" loading="lazy">
-                    </div>
-                `;
+                caseProcessGrid.innerHTML = '<p style="color:#666; font-size:0.9rem; font-family:monospace;">Process documentation pending deployment.</p>';
             }
-
-            contentRoot.innerHTML = `
-                <div class="case-content">
-                    <header class="case-header">
-                        <span class="case-header__index">${records.index}</span>
-                        <h2 class="case-header__title" id="drawer-heading-title">${records.title}</h2>
-                        <div class="case-header__specs">
-                            <span>Discipline: ${records.discipline}</span>
-                            <span>Timeline: ${records.timeline}</span>
-                        </div>
-                    </header>
-                    <section class="case-section" aria-label="Project analysis body">
-                        <div class="case-section__body">
-                            ${records.description}
-                        </div>
-                        ${visualMediaBlock}
-                    </section>
-                </div>
-            `;
-
-            // State Transformations
-            document.body.style.overflow = 'hidden'; // Lock background structural layout canvas
-            drawer.setAttribute('aria-hidden', 'false');
-            
-            // Shift systemic keyboard lock context directly down into drawer interaction path safely
-            setTimeout(() => {
-                drawerCloseBtn.focus();
-            }, 50);
-
-        } else {
-            // Destruction / Hiding Loop
-            document.body.style.overflow = '';
-            drawer.setAttribute('aria-hidden', 'true');
-            
-            // Clear content payload safely after translation completes
-            setTimeout(() => {
-                contentRoot.innerHTML = '<div class="drawer__loading-placeholder">Initializing content presentation subsystem...</div>';
-                if (historicalActiveElement && typeof historicalActiveElement.focus === 'function') {
-                    historicalActiveElement.focus();
-                }
-            }, 400);
         }
+
+        previousActiveElement = document.activeElement; // Track keyboard focus point
+        
+        if (drawer) {
+            drawer.setAttribute('aria-hidden', 'false');
+            document.body.style.overflow = 'hidden'; // Lock background scrolling
+        }
+        
+        if (drawerCloseBtn) drawerCloseBtn.focus();
     };
 
-    // Global Registration Mapping Hook for Cards
+    const closeCaseStudy = () => {
+        if (drawer) {
+            drawer.setAttribute('aria-hidden', 'true');
+            document.body.style.overflow = ''; // Release background lock
+        }
+        if (previousActiveElement) previousActiveElement.focus();
+    };
+
+    // Card Selection Integration Handling Logic (Clicks and Keypress Triggers)
     portfolioCards.forEach(card => {
-        const handleCardActivation = (e) => {
-            // Prevent default loop to isolate tap conflicts on mobile displays
-            e.preventDefault();
-            const referenceKey = card.getAttribute('data-project');
-            if (referenceKey) toggleDrawerVisibility(referenceKey, true);
+        const handleActivation = (e) => {
+            const projectId = card.getAttribute('data-project');
+            if (projectId) {
+                openCaseStudy(projectId);
+            }
         };
 
-        card.addEventListener('click', handleCardActivation);
-        
+        // Trigger on click
+        card.addEventListener('click', handleActivation);
+
+        // Trigger on Enter or Spacebar keyboard navigation
         card.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
-                handleCardActivation(e);
+                e.preventDefault(); // Stop spacebar from shifting layout scroll positions
+                handleActivation(e);
             }
         });
     });
 
-    // Dismiss Actions: Input Events
-    drawerCloseBtn.addEventListener('click', (e) => {
-        e.preventDefault();
-        toggleDrawerVisibility(null, false);
-    });
+    // Encapsulated Event Bindings behind layout condition gates
+    if (drawer && drawerCloseBtn && drawerOverlay) {
+        // Close Interaction Bindings
+        drawerCloseBtn.addEventListener('click', closeCaseStudy);
+        drawerOverlay.addEventListener('click', closeCaseStudy);
 
-    drawerOverlay.addEventListener('click', (e) => {
-        e.preventDefault();
-        toggleDrawerVisibility(null, false);
-    });
-
-    // Escape Key Intercept Routine Handler
-    document.addEventListener('keydown', (e) => {
-        if (e.key === 'Escape' && drawer.getAttribute('aria-hidden') === 'false') {
-            toggleDrawerVisibility(null, false);
-        }
-    });
-
-    // Viewport Scaler Watcher: Closes structural panel dynamically if layout transforms past critical thresholds
-    const globalResizeWatcher = window.matchMedia('(min-width: 768px)');
-    const clearLayoutOverflows = (e) => {
-        if (drawer.getAttribute('aria-hidden') === 'false') {
-            toggleDrawerVisibility(null, false);
-        }
-    };
-    
-    // Register structural listeners across active viewport transformation routines safely
-    if (typeof globalResizeWatcher.addEventListener === 'function') {
-        globalResizeWatcher.addEventListener('change', clearLayoutOverflows);
-    } else {
-        globalResizeWatcher.addListener(clearLayoutOverflows);
-    }
-
-    /* ==========================================================================\
-       4. Independent Navigation Menu Mechanics Interface (Header Subsystem)
-       ========================================================================== */
-    const menuToggle = document.getElementById('menu-toggle');
-    const navList = document.getElementById('nav-list-all');
-
-    if (menuToggle && navList) {
-        menuToggle.addEventListener('click', (e) => {
-            e.preventDefault();
-            const isExpanded = menuToggle.getAttribute('aria-expanded') === 'true';
-            menuToggle.setAttribute('aria-expanded', !isExpanded);
-            navList.classList.toggle('active');
+        // Keyboard Intercept Event Handlers (Esc clears panel)
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && drawer.getAttribute('aria-hidden') === 'false') {
+                closeCaseStudy();
+            }
         });
     }
 });
