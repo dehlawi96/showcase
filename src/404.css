@@ -1,0 +1,71 @@
+/* ==========================================================================
+   Muhammad Soheb Portfolio — 404 Structural Layout Target
+   ========================================================================== */
+
+/* Error Core Canvas Wrapper */
+.error-canvas {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    min-height: 55vh;
+    margin-top: 60px;
+    margin-bottom: 60px;
+    padding: 0 20px;
+}
+
+.error-canvas__status {
+    font-family: monospace;
+    font-size: 0.85rem;
+    color: #666;
+    display: block;
+    margin-bottom: 12px;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+}
+
+.error-canvas__title {
+    font-size: clamp(2.2rem, 6vw, 3.8rem);
+    font-weight: 700;
+    letter-spacing: -1px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+.error-canvas__description {
+    font-size: 1.1rem;
+    line-height: 1.65;
+    max-width: 520px;
+    margin-bottom: 35px;
+    color: #333;
+}
+
+.error-canvas__action {
+    display: inline-block;
+    background: none;
+    border: none;
+    padding: 0;
+    font-family: monospace;
+    font-size: 0.95rem;
+    text-transform: uppercase;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+    color: #000000;
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    transition: opacity 0.2s ease;
+}
+
+.error-canvas__action:hover {
+    opacity: 0.7;
+}
+
+/* Ensure structural compatibility on desktop viewports */
+@media (min-width: 768px) {
+    .error-canvas {
+        padding: 0 50px;
+        margin-top: 100px;
+        margin-bottom: 100px;
+    }
+}
