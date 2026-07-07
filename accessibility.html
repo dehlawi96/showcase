@@ -9,14 +9,12 @@
     <link rel="icon" href="resource/favicon.ico" type="image/x-icon">
     <link rel="canonical" href="https://dehlawi96.github.io/showcase/accessibility.html">
 
-    <!-- Open Graph Metadata Synchronization -->
     <meta property="og:type" content="website">
     <meta property="og:url" content="https://dehlawi96.github.io/showcase/accessibility.html">
     <meta property="og:title" content="Accessibility Statement — Muhammad Soheb">
     <meta property="og:description" content="Information regarding web accessibility optimizations implemented on this platform.">
     <meta property="og:image" content="https://dehlawi96.github.io/showcase/resource/Poster/Ethereal-poster.webp">
 
-    <!-- Twitter Card Synchronization -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:url" content="https://dehlawi96.github.io/showcase/accessibility.html">
     <meta name="twitter:title" content="Accessibility Statement — Muhammad Soheb">
@@ -65,18 +63,27 @@
 
                 <article class="legal-page__section">
                     <h2>What's already in place</h2>
-                    <ul>
-                        <li><strong>Descriptive alt text</strong> on every image, so screen reader users get the same context a sighted visitor gets from looking at the work.</li>
-                        <li><strong>Keyboard-operable navigation</strong> — the mobile menu can be opened, used, and closed without a mouse, with its open/closed state announced via <code>aria-expanded</code>.</li>
-                        <li><strong>Semantic HTML structure</strong> — proper landmarks (<code>nav</code>, <code>main</code>, <code>footer</code>) and heading order, so the page makes sense when read by assistive technology rather than just when looked at.</li>
-                        <li><strong>Reserved image dimensions</strong> so pages don't jump around as content loads — useful for anyone with motion sensitivity or a slower connection.</li>
-                        <li><strong>Decorative motion is muted and looped quietly</strong> in the background rather than autoplaying with sound or demanding attention.</li>
-                    </ul>
+                    <p>Descriptive alt text on every image, so screen reader users get the same context a sighted visitor gets from looking at the work.</p>
+                    <p>Keyboard-operable navigation — the mobile menu can be opened, used, and closed without a mouse, with its open/closed state announced via aria-expanded.</p>
+                    <p>Semantic HTML structure — proper landmarks (nav, main, footer) and heading order, so the page makes sense when read by assistive technology rather than just when looked at.</p>
+                    <p>Reserved image dimensions so pages don't jump around as content loads — useful for anyone with motion sensitivity or a slower connection.</p>
+                    <p>Decorative motion is muted and looped quietly in the background rather than autoplaying with sound or demanding attention.</p>
                 </article>
 
                 <article class="legal-page__section">
-                    <h2>What's now fully implemented</h2>
+                    <h2>Implementation <button id="changelog-trigger" class="changelog-toggle-trigger" aria-expanded="false" aria-controls="changelog-display-box">Changelog</button></h2>
                     <p>The latest updates add specific improvements for keyboard and screen reader browsing. A structural "skip to main content" link has been added for keyboard users, global CSS configurations have been updated to cleanly stop animations when your operating system prefers reduced motion, and outline styles have been styled explicitly to ensure your focus target is never lost while using keyboard tab inputs.</p>
+                    
+                    <div id="changelog-display-box" hidden>
+                        <div class="changelog-entry">
+                            <span class="changelog-entry__date">July 6, 2026</span>
+                            <p class="changelog-entry__text">Overhauled behavioral structures for project display modules. Implemented deep focus trapping routines inside multi-layer modular drawer segments, ensuring keyboard-navigated outline selectors map precisely into active focus vectors while suppressing unexpected context shifting on touch surfaces.</p>
+                        </div>
+                        <div class="changelog-entry">
+                            <span class="changelog-entry__date">July 4, 2026</span>
+                            <p class="changelog-entry__text">Restructured raw semantic layouts to implement aria-expanded component flags alongside focus isolation scripts. Injected media condition queries protecting browsers from parsing core canvas physics animations when user profile configurations request reduced motion profiles.</p>
+                        </div>
+                    </div>
                 </article>
 
                 <article class="legal-page__section">
@@ -86,7 +93,7 @@
 
                 <article class="legal-page__section">
                     <h2>Feedback</h2>
-                    <p>If you run into an accessibility barrier anywhere on this site, I want to know about it. Reach out at <a href="mailto:muhammadsoheb91@gmail.com" class="legal-page__link">muhammadsoheb91@gmail.com</a> and I'll aim to address it directly.</p>
+                    <p>If you run into an accessibility barrier anywhere on this site, I want to know about it. Reach out at <a href="mailto:muhammadsoheb91@gmail.com">muhammadsoheb91@gmail.com</a> and I'll aim to address it directly.</p>
                 </article>
             </div>
         </section>
@@ -126,6 +133,6 @@
         </div>
     </footer>
 
-    <script src="src/script.js"></script>
+    <script src="src/legal.js"></script>
 </body>
 </html>
