@@ -86,3 +86,58 @@
         margin-bottom: 0;
     }
 }
+
+/* ==========================================================================
+   Changelog System Utility Styles (Appended Without Altering Core Rules)
+   ========================================================================== */
+
+.changelog-toggle-trigger {
+    background: none;
+    border: none;
+    padding: 0;
+    margin-left: 10px;
+    font-family: inherit;
+    font-size: 0.85rem;
+    text-transform: lowercase;
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    cursor: pointer;
+    color: #000000;
+    opacity: 0.5;
+    vertical-align: middle;
+    transition: opacity 0.2s ease;
+}
+
+.changelog-toggle-trigger:hover {
+    opacity: 1;
+}
+
+#changelog-display-box {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+    margin-top: 25px;
+    padding-top: 25px;
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+#changelog-display-box[hidden] {
+    display: none !important;
+}
+
+.changelog-entry {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.changelog-entry__date {
+    font-size: 0.9rem;
+    font-weight: 700;
+}
+
+.changelog-entry__text {
+    font-size: 1.02rem !important;
+    line-height: 1.55 !important;
+    color: #444 !important;
+}
