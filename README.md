@@ -12,25 +12,32 @@ A clean, typography-focused editorial digital space designed to present selected
 ```
 Portfolio
 ├─ accessibility.html      # WCAG 2.1 Level AA conformance matrix
-├─ index.html     # Core application layout root
-├─ privacy.html   # Non-tracking privacy disclosure
-├─ resource/      # Binary media layer (Static assets)
+├─ index.html              # Core application layout root
+├─ privacy.html            # Non-tracking privacy disclosure
+├─ README.md               # Editorial portfolio layout manifest
+├─ robots.txt              # Search crawler ingestion parameters
+├─ sitemap.xml             # Synchronized indexing directory map
+├─ work.html               # Selected works filtering grid layout
+│
+├─ resource/               # Binary media layer (Static assets)
 │  ├─ favicon.ico
 │  ├─ Muhammad Soheb logo.svg
-│  └─ Poster
+│  └─ Poster/              # High-fidelity project showcase imagery
 │     ├─ Ancient-drawing-poster.webp
 │     ├─ Ethereal-poster.webp
 │     ├─ Kobe-Mosque-Japan.webp
 │     ├─ look-up-at-sky.webp
 │     ├─ roman-brutalism.webp
 │     └─ sekiro-brutalism.webp
-├─ robots.txt      # Search crawler ingestion parameters
-├─ sitemap.xml    # Synchronized indexing directory map
-└─ src/     # Executable runtime environment
-   ├─ base.css    # Global tokens, landmarks, accessibility hooks
-   ├─ home.css    # Page-specific asymmetric split-grid rules
-   ├─ legal.css   # Fluid typography bounds for policy frames
-   └─ script.js   # Core interaction & focus loop engine
+│
+└─ src/                    # Executable runtime environment
+   ├─ archive.css          # Rules for project interactive drawers & filter controls
+   ├─ archive.js           # Project filtering grid & case-study drawer engine
+   ├─ base.css             # Global layout tokens, landmarks, & accessibility overrides
+   ├─ home.css             # Page-specific asymmetrical layout grid specifications
+   ├─ legal.css            # Typography layout bounds for policy & documentation frames
+   ├─ legal.js             # Isolated toggle engines for changelogs & legal submenus
+   └─ script.js            # Core mobile navigation and interactive responsive layouts
 
 ```
 ## Technical Overview
