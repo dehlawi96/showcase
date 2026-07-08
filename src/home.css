@@ -211,7 +211,7 @@
         padding-top: 30px;
     }
 
-    /* Asymmetric column layout stagger */
+    /* Stagger layout layout */
     .portfolio-card:nth-child(even) {
         transform: translateY(60px);
     }

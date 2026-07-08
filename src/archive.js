@@ -1,13 +1,8 @@
-/**
- * UI & Accessibility Interactions Archive Engine — Muhammad Soheb Portfolio
- * Handles high-fidelity project sorting, viewport mutations, and mobile layout intercept routines.
- */
+/* Project sorting and case-study drawer logic */
 
 document.addEventListener('DOMContentLoaded', () => {
     
-    /* ==========================================
-                    FILTER SYSTEM
-       ========================================== */
+    // --- Filter Portfolio Cards ---
     const filterButtons = document.querySelectorAll('.filter-btn');
     const portfolioCards = document.querySelectorAll('.portfolio-card');
 
@@ -19,7 +14,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const filterValue = button.getAttribute('data-filter');
 
             portfolioCards.forEach(card => {
-                // Fallback to an empty string to prevent .includes() from crashing on null values
                 const categories = card.getAttribute('data-category') || ''; 
                 
                 if (filterValue === 'all' || categories.includes(filterValue)) {
@@ -31,9 +25,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* ==========================================
-            CASE STUDY DATA STORAGE DIRECTORY
-       ========================================== */
+    // --- Project Database ---
     const projectDatabase = {
         "ancient-drawing": {
             index: "001",
@@ -43,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
             intent: "A deep dive into deliberate typographic arrangements, balancing classical illustrative elements with stark grid boundaries.",
             primaryMedia: '<img src="resource/Poster/Ancient-drawing-poster.webp" alt="Ancient Drawing Poster">',
             iterations: [
-                "resource/Poster/Ancient-drawing-poster.webp" // Cleaned up duplicate image tracking here
+                "resource/Poster/Ancient-drawing-poster.webp"
             ]
         },
         "ethereal": {
@@ -93,14 +85,11 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     };
 
-    /* ==========================================
-        DRAWER CONTROLLER ENGINE (OPEN / CLOSE)
-       ========================================== */
+    // --- Drawer Control ---
     const drawer = document.getElementById('case-study-drawer');
     const drawerOverlay = document.getElementById('drawer-overlay');
     const drawerCloseBtn = document.getElementById('drawer-close-btn');
     
-    // Target fields inside template drawer
     const caseIndex = document.getElementById('case-index');
     const caseTitle = document.getElementById('case-title');
     const caseCategory = document.getElementById('case-category');
@@ -115,7 +104,6 @@ document.addEventListener('DOMContentLoaded', () => {
         const data = projectDatabase[projectId];
         if (!data) return;
 
-        // Defensive checks to verify inner template regions exist before mapping text
         if (caseIndex) caseIndex.textContent = data.index;
         if (caseTitle) caseTitle.textContent = data.title;
         if (caseCategory) caseCategory.textContent = data.category;
@@ -138,11 +126,11 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         }
 
-        previousActiveElement = document.activeElement; // Track keyboard focus point
+        previousActiveElement = document.activeElement;
         
         if (drawer) {
             drawer.setAttribute('aria-hidden', 'false');
-            document.body.style.overflow = 'hidden'; // Lock background scrolling
+            document.body.style.overflow = 'hidden';
         }
         
         if (drawerCloseBtn) drawerCloseBtn.focus();
@@ -151,12 +139,12 @@ document.addEventListener('DOMContentLoaded', () => {
     const closeCaseStudy = () => {
         if (drawer) {
             drawer.setAttribute('aria-hidden', 'true');
-            document.body.style.overflow = ''; // Release background lock
+            document.body.style.overflow = '';
         }
         if (previousActiveElement) previousActiveElement.focus();
     };
 
-    // Card Selection Integration Handling Logic (Clicks and Keypress Triggers)
+    // Card event listeners (Click & Keyboard)
     portfolioCards.forEach(card => {
         const handleActivation = (e) => {
             const projectId = card.getAttribute('data-project');
@@ -165,25 +153,20 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         };
 
-        // Trigger on click
         card.addEventListener('click', handleActivation);
 
-        // Trigger on Enter or Spacebar keyboard navigation
         card.addEventListener('keydown', (e) => {
             if (e.key === 'Enter' || e.key === ' ') {
-                e.preventDefault(); // Stop spacebar from shifting layout scroll positions
+                e.preventDefault();
                 handleActivation(e);
             }
         });
     });
 
-    // Encapsulated Event Bindings behind layout condition gates
     if (drawer && drawerCloseBtn && drawerOverlay) {
-        // Close Interaction Bindings
         drawerCloseBtn.addEventListener('click', closeCaseStudy);
         drawerOverlay.addEventListener('click', closeCaseStudy);
 
-        // Keyboard Intercept Event Handlers (Esc clears panel)
         document.addEventListener('keydown', (e) => {
             if (e.key === 'Escape' && drawer.getAttribute('aria-hidden') === 'false') {
                 closeCaseStudy();

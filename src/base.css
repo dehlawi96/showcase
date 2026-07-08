@@ -16,13 +16,12 @@
     box-sizing: border-box;
 }
 
-/* Global focus utility for keyboard access */
 *:focus-visible {
     outline: 2px solid var(--text-color);
     outline-offset: 4px;
 }
 
-/* Skip link pattern (hidden until tabbed) */
+/* Skip link */
 .skip-link {
     position: absolute;
     top: -100px;
@@ -52,7 +51,6 @@ body {
     -webkit-font-smoothing: antialiased;
 }
 
-/* Label styling for section locations and context headers */
 .intro__location {
     font-size: 0.75rem;
     text-transform: uppercase;
@@ -64,7 +62,7 @@ body {
     padding-left: 8px;
 }
 
-/* Navigation Layout */
+/* --- Navigation --- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -129,7 +127,7 @@ body {
     display: none;
 }
 
-/* Mobile Toggle Hamburger Icon */
+/* Mobile nav toggle */
 .navbar__toggle {
     background: none;
     border: none;
@@ -159,7 +157,6 @@ body {
 .navbar__toggle-icon::before { top: -8px; }
 .navbar__toggle-icon::after { bottom: -8px; }
 
-/* Mobile Menu State Mutations */
 [aria-expanded="true"] .navbar__toggle-icon {
     background: transparent;
 }
@@ -170,7 +167,7 @@ body {
     transform: translateY(-8px) rotate(-45deg);
 }
 
-/* Footer Layout */
+/* --- Footer --- */
 .footer {
     background-color: var(--footer-bg);
     color: var(--footer-text);
@@ -269,7 +266,7 @@ body {
     color: rgba(255, 255, 255, 0.5);
 }
 
-/* Adaptive Breakpoints */
+/* --- Media Queries --- */
 @media (min-width: 768px) {
     .navbar {
         padding: 30px 50px;
@@ -311,16 +308,16 @@ body {
     }
 }
 
-/* System Accessibility Overrides */
+/* Reduced Motion fallback */
 @media (prefers-reduced-motion: reduce) {
     html {
         scroll-behavior: auto !important;
     }
     *, ::before, ::after {
         animation-delay: -1ms !important;
-        animation-duration: 1ms !important; /* Spec compliance: positive value satisfies parser requirements */
+        animation-duration: 1ms !important; /* >0 for parser requirements */
         animation-iteration-count: 1 !important;
         transition-duration: 0s !important;
-        transition-delay: 0s !important; /* Explicitly overrides staggered chains */
+        transition-delay: 0s !important;
     }
 }

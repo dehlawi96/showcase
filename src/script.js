@@ -1,7 +1,4 @@
-/**
- * UI & Accessibility Interactions — Muhammad Soheb Portfolio
- * Handles mobile navigation visibility toggles and state mutations.
- */
+/* Mobile navigation toggle and behavior handlers */
 
 document.addEventListener('DOMContentLoaded', () => {
     const menuToggle = document.getElementById('menu-toggle');
@@ -9,10 +6,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
     if (!menuToggle || !navList) return;
 
-    /**
-     * Updates navigation visibility and toggles associated aria states
-     * @param {boolean} shouldOpen - Explicit state flag
-     */
     const toggleNavigation = (shouldOpen) => {
         menuToggle.setAttribute('aria-expanded', shouldOpen);
         if (shouldOpen) {
@@ -27,14 +20,14 @@ document.addEventListener('DOMContentLoaded', () => {
         toggleNavigation(!isExpanded);
     });
 
-    // Close mobile layout menu on link selections (Ensures smooth internal anchor jumps)
+    // Close menu when clicking links (anchor jumps)
     navList.addEventListener('click', (e) => {
         if (e.target.closest('a')) {
             toggleNavigation(false);
         }
     });
 
-    // Escape keyboard intercept handler to instantly drop active layout overlays
+    // Close menu on ESC
     document.addEventListener('keydown', (e) => {
         if (e.key === 'Escape' && menuToggle.getAttribute('aria-expanded') === 'true') {
             toggleNavigation(false);
@@ -42,15 +35,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Media Query Listener: Resolves state issue when window resizes to desktop widths
+    // Reset menu aria-state if resizing up to desktop layout
     const desktopMediaQuery = window.matchMedia('(min-width: 768px)');
     const handleViewportChange = (e) => {
         if (e.matches) {
-            // Force state to false on desktop so aria-expanded doesn't sit frozen as true
             toggleNavigation(false);
         }
     };
     
     desktopMediaQuery.addEventListener('change', handleViewportChange);
-    handleViewportChange(desktopMediaQuery); // Run initial verification check
+    handleViewportChange(desktopMediaQuery);
 });

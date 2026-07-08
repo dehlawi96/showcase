@@ -1,8 +1,5 @@
-/* ==========================================================================
-   Muhammad Soheb Portfolio — Completely Standalone 404 System Styles
-   ========================================================================== */
+/* 404 layout styles */
 
-/* Core Resets & Variables */
 :root {
     --bg-color: #ffffff;
     --text-color: #000000;
@@ -21,7 +18,7 @@ body {
     min-height: 100vh;
 }
 
-/* --- NAVBAR SYSTEM --- */
+/* --- NAVBAR --- */
 .navbar {
     display: flex;
     align-items: center;
@@ -37,7 +34,7 @@ body {
 }
 
 .navbar__brand img {
-    height: 32px; /* Restricts the logo from exploding in size */
+    height: 32px; /* keep logo small */
     width: auto;
     display: block;
 }
@@ -60,7 +57,7 @@ body {
 }
 
 .navbar__toggle {
-    display: none; /* Hidden on desktop screens */
+    display: none;
 }
 
 .navbar__links ul {
@@ -82,7 +79,7 @@ body {
     text-decoration: underline;
 }
 
-/* --- MAIN 404 ERROR CANVAS --- */
+/* --- 404 CANVAS --- */
 .error-canvas {
     flex: 1;
     display: flex;
@@ -134,7 +131,7 @@ body {
     letter-spacing: 0.5px;
 }
 
-/* --- FOOTER SYSTEM --- */
+/* --- FOOTER --- */
 .footer {
     background-color: #000000;
     color: #ffffff;
@@ -213,10 +210,10 @@ body {
     color: #555555;
 }
 
-/* --- RESPONSIVE LAYOUT CONSTRAINTS --- */
+/* --- RESPONSIVE --- */
 @media (max-width: 768px) {
     .navbar__status {
-        display: none; /* Hide status text on tight mobile screens */
+        display: none;
     }
     
     .navbar__toggle {
@@ -236,7 +233,7 @@ body {
     }
 
     .navbar__links {
-        display: none; /* Script toggle controls visibility on mobile */
+        display: none;
     }
     
     .navbar__links.active {

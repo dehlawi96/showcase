@@ -1,8 +1,7 @@
-/**
- * Isolated Interaction Scripts for Legal Modules
- */
+/* Mobile nav + changelog toggle logic */
 document.addEventListener('DOMContentLoaded', () => {
-    // 1. Mobile Menu State Synchronization
+    
+    // Mobile menu toggle
     const menuToggle = document.getElementById('menu-toggle');
     const navList = document.getElementById('nav-list-all');
 
@@ -14,7 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     }
 
-    // 2. Soft Changelog Expand Engine
+    // Changelog expander
     const trigger = document.getElementById('changelog-trigger');
     const container = document.getElementById('changelog-display-box');
 
