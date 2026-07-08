@@ -11,6 +11,7 @@ A typography-focused portfolio for showing off graphic layout and motion art pie
 
 ```
 Portfolio
+├─ 404.html                # Custom "page not found" page
 ├─ accessibility.html      # Accessibility statement
 ├─ index.html              # Home page
 ├─ privacy.html            # Privacy policy
@@ -31,6 +32,7 @@ Portfolio
 │     └─ sekiro-brutalism.webp
 │
 └─ src/                    # CSS and JS
+   ├─ 404.css              # Standalone styles for the 404 page
    ├─ archive.css          # Styles for the work page filters and drawer
    ├─ archive.js           # Filtering + case study drawer logic
    ├─ base.css             # Shared layout, nav, footer, a11y basics
